@@ -1,0 +1,10 @@
+@model TravelApi.Models.Destination
+
+<h1> Destination Details: @Html.DisplayFor(model => model.City)</h1>
+<hr />
+
+<p>@Html.DisplayNameFor(model => model.State): @Html.DisplayFor(model => model.State)<p>
+<p>@Html.DisplayNameFor(model => model.Country): @Html.DisplayFor(model => model.Country)<p>
+<p>@Html.DisplayNameFor(model => model.Review): @Html.DisplayFor(model => model.Review)<p>
+
+<p>@Html.ActionLink("Home", "Index")</p>

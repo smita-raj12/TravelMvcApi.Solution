@@ -1,0 +1,22 @@
+@model TravelApi.Models.Destination;
+
+<h2> add destination</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.City)
+  @Html.TextBoxFor(model => model.City)
+
+  @Html.LabelFor(model => model.State)
+  @Html.TextBoxFor(model => model.State)
+
+  @Html.LabelFor(model => model.Country)
+  @Html.TextBoxFor(model => model.Country)
+
+  @Html.LabelFor(model => model.Review)
+  @Html.TextBoxFor(model => model.Review)
+
+  <input type="submit" value="Add new destination" class="btn btn-default" />
+}
+
+<p>@Html.ActionLink("Home", "Index")</p>
