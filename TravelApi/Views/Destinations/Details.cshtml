@@ -6,5 +6,10 @@
 <p>@Html.DisplayNameFor(model => model.State): @Html.DisplayFor(model => model.State)<p>
 <p>@Html.DisplayNameFor(model => model.Country): @Html.DisplayFor(model => model.Country)<p>
 <p>@Html.DisplayNameFor(model => model.Review): @Html.DisplayFor(model => model.Review)<p>
-
+<a href="/Destinations/Edit/@(Model.DestinationId)"><p>Edit</p></a>
+@using (Html.BeginForm("Delete", "Destinations"))
+{
+  @Html.Hidden("id", @Model.DestinationId)
+  <input type ="submit" value="Delete"/>
+}
 <p>@Html.ActionLink("Home", "Index")</p>

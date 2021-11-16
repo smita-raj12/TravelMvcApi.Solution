@@ -38,5 +38,15 @@ namespace TravelApi.Models
       string jsonDestination = JsonConvert.SerializeObject(destination);
       var apiCallTask = ApiHelper.Post(jsonDestination);
     }
+    public static void Put(Destination destination)
+    {
+      string jsonDestination = JsonConvert.SerializeObject(destination);
+      var apiCallTask = ApiHelper.Put(destination.DestinationId, jsonDestination);
+    }
+
+    public static void Delete(int id)
+    {
+      var apiCallTask = ApiHelper.Delete(id);
+    }
   }
 }

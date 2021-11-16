@@ -28,5 +28,24 @@ namespace TravelApi.Controllers
             Destination.Post(destination);
             return RedirectToAction("Index");
         }
+        public ActionResult Edit(int id)
+        {
+            var destination = Destination.GetDetails(id);
+            return View(destination);    
+        }
+        [HttpPost]
+        public IActionResult Edit(int id, Destination destination)
+        {
+           destination.DestinationId = id;
+           Destination.Put(destination);
+           return RedirectToAction("Index", id);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(int id)
+        {
+            Destination.Delete(id);
+            return RedirectToAction("Index");
+        }
     }
 }
