@@ -3,8 +3,10 @@ using TravelApi.Models;
 
 namespace TravelApi.Controllers
 {
+//   [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
   public class DestinationsController : Controller
     {
+        [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Index()
         {
             var allDestinations = Destination.GetDestinations();
